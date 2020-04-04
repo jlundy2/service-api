@@ -16,6 +16,7 @@
 
 package com.epam.ta.reportportal.core.plugin;
 
+import com.epam.reportportal.extension.common.ExtensionPoint;
 import com.google.common.util.concurrent.AbstractIdleService;
 
 import java.util.List;
@@ -39,7 +40,7 @@ public class PluginManager extends AbstractIdleService implements PluginBox {
 	public Optional<Plugin> getPlugin(String type) {
 		return this.pluginBoxes.stream()
 				.flatMap(pluginBox -> pluginBox.getPlugins().stream())
-				.filter(plugin -> plugin.getType().equals(type))
+				.filter(plugin -> plugin.getType().equals(ExtensionPoint.valueOf(type)))
 				.findAny();
 	}
 
