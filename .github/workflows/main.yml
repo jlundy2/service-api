@@ -13,7 +13,7 @@ jobs:
     - name: Build and push Docker images
       uses: docker/build-push-action@v1.1.0
       with:
-        repository: jlundy2/reportportal-service-authorization
+        repository: jlundy2/reportportal-service-api
         username: ${{ secrets.DOCKERHUB_USERNAME}}
         password: ${{ secrets.DOCKERHUB_PASSWORD }}
         tag_with_ref: true
